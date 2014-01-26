@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*static int test_pix_sum_c(unsigned char * pix, int line_size)
+static int test_pix_sum_c(unsigned char * pix, int line_size)
 {
     int s, i, j;
 
@@ -19,9 +19,12 @@
         pix += line_size - 16;
     }
     return s;
-}*/
+}
 
 extern int my_pix_sum_c(unsigned char *pix, int line_size);
+
+extern int my_test_pix_sum_c(unsigned char *pix, int line_size);
+
 
 int main()
 {
@@ -36,8 +39,12 @@ int main()
 			data[ i * line_size + j ] = i + 1 ;
 
 	//calc sum
-	int sum = my_pix_sum_c( data, line_size);
+//	int sum = my_pix_sum_c( data, line_size);
 	
+//	int sum = test_pix_sum_c( data, line_size);
+
+	int sum = my_test_pix_sum_c( data, line_size);
+
 	printf("sum = %d\n",sum);
 
 
